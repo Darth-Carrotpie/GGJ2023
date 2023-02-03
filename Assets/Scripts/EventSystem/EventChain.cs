@@ -10,6 +10,6 @@ public class EventChain : MonoBehaviour {
         EventCoordinator.Detach(EventName.System.StartGame(), OnStartGame);
     }
     void OnStartGame(GameMessage msg) {
-        EventCoordinator.TriggerEvent(EventName.UI.ShowCooldownNotReady(), msg);
+        //EventCoordinator.TriggerEvent(EventName.UI.ShowCooldownNotReady(), msg);
     }
 }
