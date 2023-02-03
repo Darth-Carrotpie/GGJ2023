@@ -23,40 +23,29 @@ public class EventName {
         public static List<string> Get() { return new List<string> { None() }; }
     }
     public class Input {
-        public static string PlayerAmountSelected() { return "Input_PlayerAmountSelected"; }
-        public static string Accelerate() { return "Input_Accelerate"; }
-        public static string Decelerate() { return "Input_Decelerate"; }
-        public static string TurnLeft() { return "Input_TurnLeft"; }
-        public static string TurnRight() { return "Input_TurnRight"; }
-        public static string ChangeHidden() { return "Input_ChangeHidden"; }
-        public static string Fireball() { return "Input_Fireball"; }
+        public static string TapRegular() { return "Input_Tap_Regular"; }
+        public static string TapUpgrade() { return "Input_Tap_Upgrade"; }
 
         public static string StartLevel() { return "Input_StartLevel"; }
         public static string None() { return null; }
         public static List<string> Get() {
             return new List<string> {
-                PlayerAmountSelected(),
-                Accelerate(),
-                Decelerate(),
-                TurnLeft(),
-                TurnRight(),
-                ChangeHidden(),
-                Fireball(),
+                TapRegular(),
+                TapUpgrade(),
                 StartLevel(),
                 None(),
             };
         }
     }
-    public class Player {
-        public static string HasAppeared() { return "Player_HasAppeared"; }
-        public static string HasHidden() { return "Player_HasHidden"; }
-        public static string Bump() { return "Player_Bump"; }
-        public static string PowerIncreased() { return "Player_PowerIncreased"; }
-        public static List<string> Get() { return new List<string> { HasAppeared(), HasHidden(), Bump(), PowerIncreased() }; }
+    public class Hostiles {
+        public static string DamageTrunk() { return "Hostiles_DamageTrunk"; }
+        public static string None() { return null; }
+        public static List<string> Get() { return new List<string> { DamageTrunk(), None() }; }
     }
     public class Economy {
+        public static string UpgradeTrunk() { return "Econ_UpgradeTrunk"; }
         public static string None() { return null; }
-        public static List<string> Get() { return new List<string> { None() }; }
+        public static List<string> Get() { return new List<string> { UpgradeTrunk(), None() }; }
     }
     public class Environment {
         public static string StartChurchDestruction() { return "Environment_StartChurchDestruction"; }
@@ -79,6 +68,10 @@ public class EventName {
 
     public static List<string> Get() {
         return new List<string> {}.Concat(UI.Get())
+            .Concat(Hostiles.Get())
+            .Concat(Economy.Get())
+            .Concat(Environment.Get())
+            .Concat(System.Get())
             .Concat(Editor.Get())
             .Concat(Input.Get())
             .Concat(AI.Get())
