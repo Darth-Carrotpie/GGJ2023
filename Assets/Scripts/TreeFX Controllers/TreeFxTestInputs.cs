@@ -10,6 +10,12 @@ public class TreeFxTestInputs : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.D)) {
             EventCoordinator.TriggerEvent(EventName.Hostiles.DamageTrunk(), GameMessage.Write().WithDamage(100));
         }
+        if (Input.GetKeyDown(KeyCode.R)) {
+            EventCoordinator.TriggerEvent(EventName.Hostiles.DamageRoots(), GameMessage.Write().WithDamage(100));
+        }
+        if (Input.GetKeyDown(KeyCode.H)) {
+            EventCoordinator.TriggerEvent(EventName.Health.HealTree(), GameMessage.Write().WithHealth(50));
+        }
         if (Input.GetKeyDown(KeyCode.KeypadPlus)) {
             EventCoordinator.TriggerEvent(EventName.UI.ModifyLeaves(), GameMessage.Write().WithLeavesAmount(2));
         }
