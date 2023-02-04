@@ -7,6 +7,9 @@ public class TreeFxTestInputs : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.U)) {
             EventCoordinator.TriggerEvent(EventName.Economy.UpgradeTrunk(), GameMessage.Write());
         }
+        if (Input.GetKeyDown(KeyCode.I)) {
+            EventCoordinator.TriggerEvent(EventName.Economy.UpgradeRoots(), GameMessage.Write());
+        }
         if (Input.GetKeyDown(KeyCode.D)) {
             EventCoordinator.TriggerEvent(EventName.Hostiles.DamageTrunk(), GameMessage.Write().WithDamage(100));
         }
