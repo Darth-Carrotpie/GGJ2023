@@ -43,6 +43,21 @@ public class GameMessage : BaseMessage {
         leavesAmountSet = true;
         return this;
     }
+    private bool potatoesAmountSet;
+    public int potatoesAmount {
+        get {
+            if (potatoesAmountSet)
+                return _potatoesAmount;
+            else throw new Exception("No potatoesAmount was set before request for GameMessage: " + this);
+        }
+        set { _potatoesAmount = value; }
+    }
+    private int _potatoesAmount;
+    public GameMessage WithPotatoesAmount(int value) {
+        _potatoesAmount = value;
+        potatoesAmountSet = true;
+        return this;
+    }
     Transform _playerTransform;
     private bool playerTransformSet;
     public Transform playerTransform {

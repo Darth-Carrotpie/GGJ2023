@@ -9,6 +9,7 @@ public class TreeFxTestInputs : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.I)) {
             EventCoordinator.TriggerEvent(EventName.Economy.UpgradeRoots(), GameMessage.Write());
+            EventCoordinator.TriggerEvent(EventName.UI.ModifyPotatoes(), GameMessage.Write().WithPotatoesAmount(1));
         }
         if (Input.GetKeyDown(KeyCode.D)) {
             EventCoordinator.TriggerEvent(EventName.Hostiles.DamageTrunk(), GameMessage.Write().WithDamage(100));

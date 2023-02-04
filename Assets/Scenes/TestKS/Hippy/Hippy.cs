@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-public class Dog : MonoBehaviour
+public class Hippy : MonoBehaviour
 {
   private Animator _animator;
 
   private class ActionRef { }
   private ActionRef _actionRef;
-
-  public ParticleSystem peeEmitter;
-  public Transform bodyTransform;
 
   void Awake()
   {
@@ -23,7 +20,7 @@ public class Dog : MonoBehaviour
     var actionRef = new ActionRef();
     _actionRef = actionRef;
 
-    _animator.Play("dog_walk");
+    _animator.Play("walk");
     float startTime = Time.time;
 
     while (Time.time < startTime + duration)
@@ -43,54 +40,23 @@ public class Dog : MonoBehaviour
     transform.position = to;
   }
 
-  public IEnumerator Pee(Vector3 peeSpot, float peeIntensity)
+  public IEnumerator Hug(Vector3 peeSpot)
   {
     var actionRef = new ActionRef();
     _actionRef = actionRef;
 
-    _animator.Play("dog_pee");
-    peeEmitter.Play();
-    // TODO: maybe not hardcode
-    bodyTransform.localScale = new Vector3(-1, 1, 1);
+    _animator.Play("hug");
 
     while (true)
     {
       if (_actionRef != actionRef)
       {
-        Debug.Log("Pee animation interrupted");
-        peeEmitter.Stop();
+        Debug.Log("Hug animation interrupted");
         yield break;
       }
 
       yield return null;
     }
-  }
-
-  public IEnumerator Fetch(Vector3 from, Vector3 to, float duration)
-  {
-    var actionRef = new ActionRef();
-    _actionRef = actionRef;
-
-    _animator.Play("dog_jump");
-    float startTime = Time.time;
-    // TODO: maybe not hardcode
-    bodyTransform.localScale = new Vector3(-1, 1, 1);
-
-    while (Time.time < startTime + duration)
-    {
-      if (_actionRef != actionRef)
-      {
-        Debug.Log("Fetch animation interrupted");
-        yield break;
-      }
-
-      float t = (Time.time - startTime) / duration;
-      transform.position = Vector2.Lerp(from, to, t);
-
-      yield return null;
-    }
-
-    transform.position = to;
   }
 
   public void Stop()

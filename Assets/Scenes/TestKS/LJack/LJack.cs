@@ -40,7 +40,7 @@ public class LJack : MonoBehaviour
     transform.position = to;
   }
 
-  public IEnumerator Spin(Vector3 peeSpot, float peeIntensity)
+  public IEnumerator Spin(Vector3 peeSpot)
   {
     var actionRef = new ActionRef();
     _actionRef = actionRef;
@@ -75,7 +75,6 @@ public class LJack : MonoBehaviour
         yield break;
       }
 
-      // TODO: animate jump
       float t = (Time.time - startTime) / duration;
       transform.position = Vector2.Lerp(from, to, t);
 

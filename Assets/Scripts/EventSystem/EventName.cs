@@ -16,7 +16,8 @@ public class EventName {
         public static string ShowScoreScreen() { return "UI_ShowScoreScreen"; }
         public static string ScoreScreenShown() { return "UI_ScoreScreenShown"; }
         public static string ModifyLeaves() { return "UI_ModifyLeaves"; }
-        public static List<string> Get() { return new List<string> { ShowScoreScreen(), ScoreScreenShown(), ModifyLeaves() }; }
+        public static string ModifyPotatoes() { return "UI_ModifyPotatoes"; }
+        public static List<string> Get() { return new List<string> { ShowScoreScreen(), ScoreScreenShown(), ModifyLeaves(), ModifyPotatoes() }; }
     }
     public class Editor {
         public static string None() { return null; }
