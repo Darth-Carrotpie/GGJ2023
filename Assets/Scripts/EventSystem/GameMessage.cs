@@ -88,4 +88,19 @@ public class GameMessage : BaseMessage {
         strMessageSet = true;
         return this;
     }
+
+    Cycle _cycle;
+    private bool cycleSet;
+    public Cycle cycle {
+        get {
+            if (cycleSet)
+                return _cycle;
+            else throw new Exception("No <_turnSide> was set before request for GameMessage: " + this);
+        }
+    }
+    public GameMessage WithCycle(Cycle value) {
+        _cycle = value;
+        cycleSet = true;
+        return this;
+    }
 }
