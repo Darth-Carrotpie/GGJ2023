@@ -9,22 +9,26 @@ public class LeafNode : MonoBehaviour {
     Coroutine coroutine;
     bool isFading;
     float currentFade = 0;
+    PolygonCollider2D col;
 
     public void Init() {
         rend = GetComponentsInChildren<SpriteRenderer>()[1];
         rend.color = new Color(1, 1, 1, 0f);
+        col = GetComponentInChildren<PolygonCollider2D>();
     }
 
     public void Activate() {
         if (coroutine != null)
             StopCoroutine(coroutine);
         coroutine = StartCoroutine(FadeIn());
+        col.enabled = true;
     }
 
     public void Deactivate() {
         if (coroutine != null)
             StopCoroutine(coroutine);
         coroutine = StartCoroutine(FadeOut());
+        col.enabled = false;
     }
 
     public void Damage() {

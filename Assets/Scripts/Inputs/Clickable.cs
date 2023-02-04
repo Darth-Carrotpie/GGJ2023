@@ -32,10 +32,12 @@ public class Clickable : MonoBehaviour {
     }
 
     void OnMouseDown() {
+        Debug.Log("wanna trigger");
         keyDown = true;
         EventCoordinator.TriggerEvent(EventName.Input.TapRegular(), GameMessage.Write().WithClickable(this));
     }
     void OnMouseUp() {
         keyDown = false;
+        timer = 0;
     }
 }
