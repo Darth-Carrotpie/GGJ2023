@@ -12,10 +12,16 @@ public class Dog : MonoBehaviour
 
     public ParticleSystem peeEmitter;
     public Transform bodyTransform;
+    public AudioClip barkClip;
+    public AudioClip peeClip;
+
+    private AudioSource _soundSource;
 
     void Awake()
     {
         _animator = GetComponent<Animator>();
+        _soundSource = this.gameObject.AddComponent<AudioSource>();
+        _soundSource.PlayOneShot(barkClip);
     }
 
     public IEnumerator Walk(Vector3 from, Vector3 to, float duration)
@@ -48,6 +54,10 @@ public class Dog : MonoBehaviour
         var actionRef = new ActionRef();
         _actionRef = actionRef;
 
+        _soundSource.clip = peeClip;
+        _soundSource.loop = true;
+        _soundSource.Play();
+
         _animator.Play("dog_pee");
         peeEmitter.Play();
         // TODO: maybe not hardcode
@@ -59,6 +69,7 @@ public class Dog : MonoBehaviour
             {
                 Debug.Log("Pee animation interrupted");
                 peeEmitter.Stop();
+                _soundSource.Stop();
                 yield break;
             }
 
