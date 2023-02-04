@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2894809213103005636
+--- !u!114 &-803990770964693727
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TreeBranches
-  m_Shader: {fileID: -6465566751694194690, guid: ed72ad5f66cad8748a9fc5d8ac6e6a92, type: 3}
+  m_Name: Waterpit Material
+  m_Shader: {fileID: -6465566751694194690, guid: bc67348c2399ca041baf7ad647a70dcc, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -66,15 +66,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Cutoff: 0.5
+    - _CellOffset: 5.26
     - _EnableExternalAlpha: 0
-    - _OutlineThickness: 0
-    - _TreeThickness: 0.1
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _WaterFill: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.32941177, g: 0.3545804, b: 0.59607846, a: 0.65882355}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _InnerColor: {r: 0.5566038, g: 0.29755545, b: 0.29755545, a: 1}
-    - _OuterColor: {r: 0.25004467, g: 0.6415094, b: 0.02662866, a: 1}
-    - _OutlineColor: {r: 0.6431373, g: 0.0332391, b: 0.027450988, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

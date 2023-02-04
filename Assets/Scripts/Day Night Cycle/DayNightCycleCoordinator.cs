@@ -23,7 +23,9 @@ public class DayNightCycleCoordinator : Singleton<DayNightCycleCoordinator> {
             currentTime = 0;
         }
     }
-
+    private void Start() {
+        EventCoordinator.TriggerEvent(EventName.Environment.NextCycle(), GameMessage.Write().WithCycle(Cycle.day));
+    }
     void SwitchCycle() {
         Cycle nextCycle;
         if (currentCycle == Cycle.day)

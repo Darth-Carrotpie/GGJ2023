@@ -8,18 +8,24 @@ public class ResourceCoordinator : Singleton<ResourceCoordinator> {
     public int currentLeaves;
 
     public float maxSunshine = 3f;
-    public float maxWater = 3f;
+    public float maxWaterCurrent = 3f;
+    public float maxWaterMax = 10f;
 
     public float currentSunshine;
     public float currentWater;
+    WaterController wContr;
 
     void Start() {
         EventCoordinator.StartListening(EventName.Economy.ConsumeSunshine(), ConsumeSunshine);
         EventCoordinator.StartListening(EventName.Economy.ConsumeWater(), ConsumeWater);
+        if (wContr == null)
+            wContr = FindObjectOfType<WaterController>();
     }
 
     void Update() {
         AccumualateGlobalRecources();
+        float waterFill = currentWater / maxWaterMax;
+        wContr.SetWaterLevel(waterFill);
     }
     void AccumualateGlobalRecources() {
         if (DayNightCycleCoordinator.GetCycle() == Cycle.day) {
@@ -27,7 +33,7 @@ public class ResourceCoordinator : Singleton<ResourceCoordinator> {
             currentSunshine = Mathf.Clamp(currentSunshine, 0, maxSunshine);
         } else {
             currentWater += Time.deltaTime;
-            currentWater = Mathf.Clamp(currentWater, 0, maxWater);
+            currentWater = Mathf.Clamp(currentWater, 0, maxWaterCurrent);
         }
     }
     void ConsumeWater(GameMessage msg) {
