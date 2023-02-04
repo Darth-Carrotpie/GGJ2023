@@ -54,8 +54,9 @@ public class EventName {
         public static string ConsumeWater() { return "Econ_ConsumeWater"; }
         public static string ConsumeSunshine() { return "Econ_ConsumeSunshine"; }
         public static string UpgradeTrunk() { return "Econ_UpgradeTrunk"; }
+        public static string UpgradeRoots() { return "Econ_UpgradeRoots"; }
         public static string None() { return null; }
-        public static List<string> Get() { return new List<string> { UpgradeTrunk(), ConsumeWater(), ConsumeSunshine(), None() }; }
+        public static List<string> Get() { return new List<string> { UpgradeTrunk(), UpgradeRoots(), ConsumeWater(), ConsumeSunshine(), None() }; }
     }
     public class Environment {
         public static string NextCycle() { return "Environment_NextCycle"; }
