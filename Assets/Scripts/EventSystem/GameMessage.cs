@@ -64,7 +64,7 @@ public class GameMessage : BaseMessage {
         get {
             if (playerIDSet)
                 return _playerID;
-            else throw new Exception("No <_turnSide> was set before request for GameMessage: " + this);
+            else throw new Exception("No <_playerID> was set before request for GameMessage: " + this);
         }
     }
     public GameMessage WithPlayerID(int value) {
@@ -72,6 +72,37 @@ public class GameMessage : BaseMessage {
         playerIDSet = true;
         return this;
     }
+
+    int _damage;
+    private bool damageSet;
+    public int damage {
+        get {
+            if (damageSet)
+                return _damage;
+            else throw new Exception("No <_damage> was set before request for GameMessage: " + this);
+        }
+    }
+    public GameMessage WithDamage(int value) {
+        _damage = value;
+        damageSet = true;
+        return this;
+    }
+
+    int _health;
+    private bool healthSet;
+    public int health {
+        get {
+            if (healthSet)
+                return _health;
+            else throw new Exception("No <_health> was set before request for GameMessage: " + this);
+        }
+    }
+    public GameMessage WithHealth(int value) {
+        _health = value;
+        healthSet = true;
+        return this;
+    }
+    
     //example to handle empty messages better
     private string _strMessage;
     public string strMessage {

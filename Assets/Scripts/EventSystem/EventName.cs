@@ -37,6 +37,13 @@ public class EventName {
             };
         }
     }
+    public class Health {
+        public static string HealTrunk() { return "Health_HealTrunk"; }
+        public static string CurrentPercent() { return "Health_CurrentPercent"; }
+        public static string HealthEmpty() { return "Health_IsEmpty"; }
+        public static string None() { return null; }
+        public static List<string> Get() { return new List<string> { HealTrunk(), CurrentPercent(), HealthEmpty(), None() }; }
+    }
     public class Hostiles {
         public static string DamageTrunk() { return "Hostiles_DamageTrunk"; }
         public static string None() { return null; }
