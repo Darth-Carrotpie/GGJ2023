@@ -8,7 +8,7 @@ public class TreeFxTestInputs : MonoBehaviour {
             EventCoordinator.TriggerEvent(EventName.Economy.UpgradeTrunk(), GameMessage.Write());
         }
         if (Input.GetKeyDown(KeyCode.D)) {
-            EventCoordinator.TriggerEvent(EventName.Hostiles.DamageTrunk(), GameMessage.Write());
+            EventCoordinator.TriggerEvent(EventName.Hostiles.DamageTrunk(), GameMessage.Write().WithDamage(100));
         }
         if (Input.GetKeyDown(KeyCode.KeypadPlus)) {
             EventCoordinator.TriggerEvent(EventName.UI.ModifyLeaves(), GameMessage.Write().WithLeavesAmount(2));

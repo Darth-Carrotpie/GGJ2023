@@ -54,7 +54,12 @@ public class HealthLogic : MonoBehaviour
         if (this.currentHealth > this.maxHealth) {
             this.currentHealth = this.maxHealth;
         }
+        if (this.currentHealth < 0) {
+            this.currentHealth = 0;
+        }
         CheckIfDead();
+
+        Debug.Log("Remaining health: " + this.currentHealth);
     }
 
     void CheckIfDead()
