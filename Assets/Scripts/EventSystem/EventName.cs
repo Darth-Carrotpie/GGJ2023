@@ -52,12 +52,17 @@ public class EventName {
         public static List<string> Get() { return new List<string> { DamageTrunk(), DamageRoots(), None() }; }
     }
     public class Economy {
+        public static string ModifyLeaves() { return "Econ_ModifyLeaves"; }
+        public static string ModifyBranches() { return "Econ_ModifyBranches"; }
+        public static string ModifyHearts() { return "Econ_ModifyHearts"; }
+        public static string ModifyDroplets() { return "Econ_ModifyDroplets"; }
+
         public static string ConsumeWater() { return "Econ_ConsumeWater"; }
         public static string ConsumeSunshine() { return "Econ_ConsumeSunshine"; }
         public static string UpgradeTrunk() { return "Econ_UpgradeTrunk"; }
         public static string UpgradeRoots() { return "Econ_UpgradeRoots"; }
         public static string None() { return null; }
-        public static List<string> Get() { return new List<string> { UpgradeTrunk(), UpgradeRoots(), ConsumeWater(), ConsumeSunshine(), None() }; }
+        public static List<string> Get() { return new List<string> { ModifyLeaves(), ModifyBranches(), ModifyHearts(), ModifyDroplets(), UpgradeTrunk(), UpgradeRoots(), ConsumeWater(), ConsumeSunshine(), None() }; }
     }
     public class Environment {
         public static string NextCycle() { return "Environment_NextCycle"; }
