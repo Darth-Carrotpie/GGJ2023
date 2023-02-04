@@ -12,10 +12,15 @@ public class TestKS : MonoBehaviour
   public Transform lJackSpawn;
   public Transform cutSpot;
 
+  public Hippy hippyPrefab;
+  public Transform hippySpawn;
+  public Transform hugSpot;
+
   void Start()
   {
     StartCoroutine(TestDog());
     StartCoroutine(TestLJack());
+    StartCoroutine(TestHippy());
   }
 
   IEnumerator TestDog()
@@ -38,18 +43,36 @@ public class TestKS : MonoBehaviour
   IEnumerator TestLJack()
   {
     var lJack = Instantiate<LJack>(lJackPrefab);
-    lJack.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+    // lJack.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
     yield return StartCoroutine(lJack.Walk(lJackSpawn.position, cutSpot.position, 5));
 
-    StartCoroutine(lJack.Spin(cutSpot.position, 100));
+    StartCoroutine(lJack.Spin(cutSpot.position));
 
     // potential implementation to respond
-    // while (!clicked) { yield return null; }
+    // while (!hugged) { yield return null; }
     yield return new WaitForSeconds(3);
 
     yield return StartCoroutine(lJack.Leave(cutSpot.position, lJackSpawn.position, 3f));
 
     lJack.PutDown();
+  }
+
+  IEnumerator TestHippy()
+  {
+    yield return new WaitForSeconds(4);
+
+    var hippy = Instantiate<Hippy>(hippyPrefab);
+    // hippy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+
+    yield return StartCoroutine(hippy.Walk(hippySpawn.position, hugSpot.position, 2));
+
+    StartCoroutine(hippy.Hug(hugSpot.position));
+
+    yield return new WaitForSeconds(2);
+
+    yield return StartCoroutine(hippy.Walk(hugSpot.position, hippySpawn.position, 6f));
+
+    hippy.PutDown();
   }
 }
