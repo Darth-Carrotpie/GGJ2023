@@ -7,11 +7,16 @@ public class Bird : MonoBehaviour
 {
     private class ActionRef { }
     private ActionRef _actionRef;
+    public AudioClip entryClip;
+
+    private AudioSource _soundSource;
 
     public IEnumerator Fly(Vector3 from, Vector3 to, float duration)
     {
         var actionRef = new ActionRef();
         _actionRef = actionRef;
+        _soundSource = this.gameObject.AddComponent<AudioSource>();
+        _soundSource.PlayOneShot(entryClip);
 
         float startTime = Time.time;
 
