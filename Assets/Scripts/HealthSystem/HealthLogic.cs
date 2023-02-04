@@ -56,7 +56,8 @@ public class HealthLogic : MonoBehaviour
         }
         CheckIfDead();
 
-        Debug.Log("Remaining health: " + this.currentHealth);
+        int percent = (currentHealth * 100) / maxHealth;
+        EventCoordinator.TriggerEvent(EventName.Health.CurrentPercent(), GameMessage.Write().WithHealth(percent));
     }
 
     void CheckIfDead()
