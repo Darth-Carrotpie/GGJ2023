@@ -21,7 +21,7 @@ public class RootDamage : MonoBehaviour
     void Start()
     {
         material = rootSpriteRend.material;
-        EventCoordinator.StartListening(EventName.Hostiles.DamageTrunk(), FlashOutline);
+        EventCoordinator.StartListening(EventName.Hostiles.DamageRoots(), FlashOutline);
     }
 
     void FlashOutline(GameMessage msg){

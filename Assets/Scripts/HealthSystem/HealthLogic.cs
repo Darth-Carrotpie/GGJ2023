@@ -18,24 +18,21 @@ public class HealthLogic : MonoBehaviour
         this.regenOverTime = 0;
 
         EventCoordinator.StartListening(EventName.Hostiles.DamageTrunk(), TakeDamage);
-        EventCoordinator.StartListening(EventName.Health.HealTrunk(), TakeHealing);
+        EventCoordinator.StartListening(EventName.Hostiles.DamageRoots(), TakeDamage);
+        EventCoordinator.StartListening(EventName.Health.HealTree(), TakeHealing);
     }
 
     void OnDestroy()
     {
         EventCoordinator.StopListening(EventName.Hostiles.DamageTrunk(), TakeDamage);
-        EventCoordinator.StopListening(EventName.Health.HealTrunk(), TakeHealing);
+        EventCoordinator.StopListening(EventName.Hostiles.DamageRoots(), TakeDamage);
+        EventCoordinator.StopListening(EventName.Health.HealTree(), TakeHealing);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    void FixedUpdate()
-    {
-        
+        // Time.deltaTime;
     }
 
     void TakeDamage(GameMessage msg)
@@ -66,7 +63,6 @@ public class HealthLogic : MonoBehaviour
     {
         if (this.currentHealth <= 0) {
             EventCoordinator.TriggerEvent(EventName.Health.HealthEmpty(), GameMessage.Write());
-            Debug.Log("Health empty");
         }
     }
 }
