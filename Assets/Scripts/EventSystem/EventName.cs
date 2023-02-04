@@ -43,14 +43,17 @@ public class EventName {
         public static List<string> Get() { return new List<string> { DamageTrunk(), None() }; }
     }
     public class Economy {
+        public static string ConsumeWater() { return "Econ_ConsumeWater"; }
+        public static string ConsumeSunshine() { return "Econ_ConsumeSunshine"; }
         public static string UpgradeTrunk() { return "Econ_UpgradeTrunk"; }
         public static string None() { return null; }
-        public static List<string> Get() { return new List<string> { UpgradeTrunk(), None() }; }
+        public static List<string> Get() { return new List<string> { UpgradeTrunk(), ConsumeWater(), ConsumeSunshine(), None() }; }
     }
     public class Environment {
+        public static string NextCycle() { return "Environment_NextCycle"; }
         public static string StartChurchDestruction() { return "Environment_StartChurchDestruction"; }
         public static string ChurchCleanUp() { return "Environment_ChurchCleanUp"; }
-        public static List<string> Get() { return new List<string> { StartChurchDestruction(), ChurchCleanUp() }; }
+        public static List<string> Get() { return new List<string> { NextCycle(), StartChurchDestruction(), ChurchCleanUp() }; }
 
     }
     public class System {
