@@ -9,10 +9,16 @@ public class Hippy : MonoBehaviour
 
     private class ActionRef { }
     private ActionRef _actionRef;
+    public AudioClip entryClip;
+    public AudioClip damageClip;
+
+    private AudioSource _soundSource;
 
     void Awake()
     {
         _animator = GetComponent<Animator>();
+        _soundSource = this.gameObject.AddComponent<AudioSource>();
+        _soundSource.PlayOneShot(entryClip);
     }
 
     public IEnumerator Walk(Vector3 from, Vector3 to, float duration)
@@ -47,11 +53,16 @@ public class Hippy : MonoBehaviour
 
         _animator.Play("hug");
 
+        _soundSource.clip = damageClip;
+        _soundSource.loop = true;
+        _soundSource.Play();
+
         while (true)
         {
             if (_actionRef != actionRef)
             {
                 Debug.Log("Hug animation interrupted");
+                _soundSource.Stop();
                 yield break;
             }
 
