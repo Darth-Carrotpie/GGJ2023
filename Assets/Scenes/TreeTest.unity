@@ -2516,6 +2516,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de5ff49bc91e1a49bf58df803b1916a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rootSpriteRend: {fileID: 530173734}
+  material: {fileID: 2100000, guid: 6015b937646e62c4e946108bc66ab86c, type: 2}
+  flashSpeed: 4
+  currentEdge: 0
+  secondStrength: 0.1
+  firstStrength: 0.2
+  currentRootGrowth: 0
 --- !u!1 &1136871296
 GameObject:
   m_ObjectHideFlags: 0
@@ -4881,6 +4888,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2079413586
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2079413588}
+  - component: {fileID: 2079413587}
+  m_Layer: 0
+  m_Name: HealthLogic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2079413587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079413586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2179d074a7be9b429a49db512912d9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2079413588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079413586}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2082959252
 GameObject:
   m_ObjectHideFlags: 0

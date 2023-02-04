@@ -66,6 +66,7 @@ public class HealthLogic : MonoBehaviour
     {
         if (this.currentHealth <= 0) {
             EventCoordinator.TriggerEvent(EventName.Health.HealthEmpty(), GameMessage.Write());
+            Debug.Log("Health empty");
         }
     }
 }
