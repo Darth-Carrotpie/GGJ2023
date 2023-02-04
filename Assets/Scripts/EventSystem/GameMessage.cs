@@ -28,7 +28,21 @@ public class GameMessage : BaseMessage {
         coordinatesSet = true;
         return this;
     }
-
+    private bool leavesAmountSet;
+    public int leavesAmount {
+        get {
+            if (leavesAmountSet)
+                return _leavesAmount;
+            else throw new Exception("No leavesAmount was set before request for GameMessage: " + this);
+        }
+        set { _leavesAmount = value; }
+    }
+    private int _leavesAmount;
+    public GameMessage WithLeavesAmount(int value) {
+        _leavesAmount = value;
+        leavesAmountSet = true;
+        return this;
+    }
     Transform _playerTransform;
     private bool playerTransformSet;
     public Transform playerTransform {
@@ -90,7 +104,7 @@ public class GameMessage : BaseMessage {
     }
     
     //example to handle empty messages better
-    /*private string _strMessage;
+    private string _strMessage;
     public string strMessage {
         get {
             if (strMessageSet)
@@ -104,7 +118,5 @@ public class GameMessage : BaseMessage {
         strMessage = value;
         strMessageSet = true;
         return this;
-    }*/
-
-
+    }
 }
