@@ -20,12 +20,17 @@ public class TestKS : MonoBehaviour
   public Transform birdSpawn;
   public Transform birdEnd;
 
+  public Pig pigPrefab;
+  public Transform pigSpawn;
+  public Transform digSpot;
+
   void Start()
   {
     StartCoroutine(TestDog());
     StartCoroutine(TestLJack());
     StartCoroutine(TestHippy());
     StartCoroutine(TestBird());
+    StartCoroutine(TestPig());
   }
 
   IEnumerator TestDog()
@@ -88,5 +93,22 @@ public class TestKS : MonoBehaviour
     yield return StartCoroutine(bird.Fly(birdSpawn.position, birdEnd.position, 6));
 
     bird.PutDown();
+  }
+
+  IEnumerator TestPig()
+  {
+    var pig = Instantiate<Pig>(pigPrefab);
+
+    yield return StartCoroutine(pig.Walk(pigSpawn.position, digSpot.position, 5));
+
+    StartCoroutine(pig.Dig(digSpot.position, 100));
+
+    // potential implementation to respond
+    // while (!clicked) { yield return null; }
+    yield return new WaitForSeconds(3);
+
+    yield return StartCoroutine(pig.Leave(digSpot.position, pigSpawn.position, 1f));
+
+    pig.PutDown();
   }
 }
