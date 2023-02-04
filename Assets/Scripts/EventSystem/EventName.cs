@@ -46,10 +46,12 @@ public class EventName {
         public static List<string> Get() { return new List<string> { HealTree(), CurrentPercent(), HealthEmpty(), None() }; }
     }
     public class Hostiles {
+        public static string DogFetchStick() { return "Hostiles_DogFetchStick"; }
+        public static string SendHippy() { return "Hostiles_SendHippy"; }
         public static string DamageTrunk() { return "Hostiles_DamageTrunk"; }
         public static string DamageRoots() { return "Hostiles_DamageRoots"; }
         public static string None() { return null; }
-        public static List<string> Get() { return new List<string> { DamageTrunk(), DamageRoots(), None() }; }
+        public static List<string> Get() { return new List<string> { DogFetchStick(), SendHippy(), DamageTrunk(), DamageRoots(), None() }; }
     }
     public class Economy {
         public static string ModifyLeaves() { return "Econ_ModifyLeaves"; }

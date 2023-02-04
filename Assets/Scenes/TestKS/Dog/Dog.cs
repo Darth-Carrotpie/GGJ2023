@@ -12,10 +12,19 @@ public class Dog : MonoBehaviour
 
     public ParticleSystem peeEmitter;
     public Transform bodyTransform;
+    public AudioClip barkClip;
+    public AudioClip peeClip;
+
+    private AudioSource _soundSource;
+
+    public UnityEngine.Events.UnityEvent onPee;
+    public float peeInterval;
 
     void Awake()
     {
         _animator = GetComponent<Animator>();
+        _soundSource = this.gameObject.AddComponent<AudioSource>();
+        _soundSource.PlayOneShot(barkClip);
     }
 
     public IEnumerator Walk(Vector3 from, Vector3 to, float duration)
@@ -43,15 +52,20 @@ public class Dog : MonoBehaviour
         transform.position = to;
     }
 
-    public IEnumerator Pee(Vector3 peeSpot, float peeIntensity)
+    public IEnumerator Pee(Vector3 peeSpot)
     {
         var actionRef = new ActionRef();
         _actionRef = actionRef;
+
+        _soundSource.clip = peeClip;
+        _soundSource.loop = true;
+        _soundSource.Play();
 
         _animator.Play("dog_pee");
         peeEmitter.Play();
         // TODO: maybe not hardcode
         bodyTransform.localScale = new Vector3(-1, 1, 1);
+        float nextPee = Time.time + peeInterval;
 
         while (true)
         {
@@ -59,7 +73,14 @@ public class Dog : MonoBehaviour
             {
                 Debug.Log("Pee animation interrupted");
                 peeEmitter.Stop();
+                _soundSource.Stop();
                 yield break;
+            }
+
+            if (Time.time < nextPee)
+            {
+                nextPee += peeInterval;
+                onPee.Invoke();
             }
 
             yield return null;

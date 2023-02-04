@@ -20,7 +20,7 @@ public class StickFlick : MonoBehaviour
     void Start()
     {
         anchorForRot = GameObject.FindGameObjectsWithTag("Anchor").First();
-        Destroy(this, destoryAfter);
+        Destroy(this.gameObject, destoryAfter);
     }
 
     // Update is called once per frame
