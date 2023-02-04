@@ -10,6 +10,8 @@ public class Dog : MonoBehaviour
   private class ActionRef { }
   private ActionRef _actionRef;
 
+  public ParticleSystem peeEmitter;
+
   void Awake()
   {
     _animator = GetComponent<Animator>();
@@ -46,12 +48,14 @@ public class Dog : MonoBehaviour
     _actionRef = actionRef;
 
     _animator.Play("dog_pee");
+    peeEmitter.Play();
 
     while (true)
     {
       if (_actionRef != actionRef)
       {
         Debug.Log("Pee animation interrupted");
+        peeEmitter.Stop();
         yield break;
       }
 
