@@ -95,12 +95,27 @@ public class GameMessage : BaseMessage {
         get {
             if (cycleSet)
                 return _cycle;
-            else throw new Exception("No <_turnSide> was set before request for GameMessage: " + this);
+            else throw new Exception("No <_cycle> was set before request for GameMessage: " + this);
         }
     }
     public GameMessage WithCycle(Cycle value) {
         _cycle = value;
         cycleSet = true;
+        return this;
+    }
+
+    Clickable _clickable;
+    private bool clickableSet;
+    public Clickable clickable {
+        get {
+            if (clickableSet)
+                return _clickable;
+            else throw new Exception("No <_clickable> was set before request for GameMessage: " + this);
+        }
+    }
+    public GameMessage WithClickable(Clickable value) {
+        _clickable = value;
+        clickableSet = true;
         return this;
     }
 }

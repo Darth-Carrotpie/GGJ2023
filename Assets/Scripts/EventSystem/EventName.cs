@@ -23,8 +23,8 @@ public class EventName {
         public static List<string> Get() { return new List<string> { None() }; }
     }
     public class Input {
-        public static string TapRegular() { return "Input_Tap_Regular"; }
-        public static string TapUpgrade() { return "Input_Tap_Upgrade"; }
+        public static string TapRegular() { return "Input_TapRegular"; }
+        public static string TapUpgrade() { return "Input_TapUpgrade"; }
 
         public static string StartLevel() { return "Input_StartLevel"; }
         public static string None() { return null; }
@@ -52,9 +52,7 @@ public class EventName {
     public class Environment {
         public static string NextCycle() { return "Environment_NextCycle"; }
         public static string StartChurchDestruction() { return "Environment_StartChurchDestruction"; }
-        public static string ChurchCleanUp() { return "Environment_ChurchCleanUp"; }
-        public static List<string> Get() { return new List<string> { NextCycle(), StartChurchDestruction(), ChurchCleanUp() }; }
-
+        public static List<string> Get() { return new List<string> { NextCycle(), StartChurchDestruction(), }; }
     }
     public class System {
         public static string GameEnd() { return "System_GameEnd"; }
