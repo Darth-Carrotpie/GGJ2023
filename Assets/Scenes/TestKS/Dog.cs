@@ -70,6 +70,8 @@ public class Dog : MonoBehaviour
 
     _animator.Play("dog_jump");
     float startTime = Time.time;
+    // TODO: maybe not hardcode
+    transform.localScale = new Vector3(-1, 1, 1);
 
     while (Time.time < startTime + duration)
     {
