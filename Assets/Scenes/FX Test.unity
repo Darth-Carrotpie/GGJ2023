@@ -123,75 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &40050674
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 40050676}
-  - component: {fileID: 40050675}
-  - component: {fileID: 40050677}
-  m_Layer: 0
-  m_Name: StickSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &40050675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 40050674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdd9ce7ba174d0a40a28003d54032549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stick: {fileID: 1411739271161859119, guid: 15c588d66e7a0df4a8c915a89936a493, type: 3}
-  stickSpawner: {fileID: 40050676}
-  swipeListener: {fileID: 40050677}
---- !u!4 &40050676
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 40050674}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.014238935, y: -1.1245983, z: 518.30054}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &40050677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 40050674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c52040e0d356884a866f616474f7057, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnSwipeCancelled:
-    m_PersistentCalls:
-      m_Calls: []
-  OnSwipe:
-    m_PersistentCalls:
-      m_Calls: []
-  _sensetivity: 10
-  _continuousDetection: 0
-  _swipeDetectionMode: 3
 --- !u!1 &181292726 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3241603196841625495, guid: 4c2a8b1b866226541b525847f7400c12, type: 3}
@@ -6266,3 +6197,64 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4ed3e9e79536634188e54a398a2ec73, type: 3}
+--- !u!1001 &3206617525852440444
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3206617525812533384, guid: 042999a60f2378f4787c8d3058cc7ee8, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206617525812533384, guid: 042999a60f2378f4787c8d3058cc7ee8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.014238935
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206617525812533384, guid: 042999a60f2378f4787c8d3058cc7ee8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.1245983
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206617525812533384, guid: 042999a60f2378f4787c8d3058cc7ee8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 518.30054
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206617525812533384, guid: 042999a60f2378f4787c8d3058cc7ee8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206617525812533384, guid: 042999a60f2378f4787c8d3058cc7ee8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206617525812533384, guid: 042999a60f2378f4787c8d3058cc7ee8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206617525812533384, guid: 042999a60f2378f4787c8d3058cc7ee8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206617525812533384, guid: 042999a60f2378f4787c8d3058cc7ee8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206617525812533384, guid: 042999a60f2378f4787c8d3058cc7ee8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206617525812533384, guid: 042999a60f2378f4787c8d3058cc7ee8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206617525812533390, guid: 042999a60f2378f4787c8d3058cc7ee8, type: 3}
+      propertyPath: m_Name
+      value: StickSpawner
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 042999a60f2378f4787c8d3058cc7ee8, type: 3}
