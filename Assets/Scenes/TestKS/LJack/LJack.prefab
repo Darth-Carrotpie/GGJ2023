@@ -454,6 +454,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   swingInterval: 1
+  entryClip: {fileID: 8300000, guid: b78a3c2deb780554cbc81d0d468f3d32, type: 3}
+  damageClip: {fileID: 8300000, guid: 6c956c2a9b73b2b44b482e1bdc260585, type: 3}
 --- !u!95 &8954364291999208598
 Animator:
   serializedVersion: 5
