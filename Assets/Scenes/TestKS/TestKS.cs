@@ -4,75 +4,111 @@ using UnityEngine;
 
 public class TestKS : MonoBehaviour
 {
-  public Dog dogPrefab;
-  public Transform dogSpawn;
-  public Transform peeSpot;
+    public Dog dogPrefab;
+    public Transform dogSpawn;
+    public Transform peeSpot;
 
-  public LJack lJackPrefab;
-  public Transform lJackSpawn;
-  public Transform cutSpot;
+    public LJack lJackPrefab;
+    public Transform lJackSpawn;
+    public Transform cutSpot;
 
-  public Hippy hippyPrefab;
-  public Transform hippySpawn;
-  public Transform hugSpot;
+    public Hippy hippyPrefab;
+    public Transform hippySpawn;
+    public Transform hugSpot;
 
-  void Start()
-  {
-    StartCoroutine(TestDog());
-    StartCoroutine(TestLJack());
-    StartCoroutine(TestHippy());
-  }
+    public Bird birdPrefab;
+    public Transform birdSpawn;
+    public Transform birdEnd;
 
-  IEnumerator TestDog()
-  {
-    var dog = Instantiate<Dog>(dogPrefab);
+    public Pig pigPrefab;
+    public Transform pigSpawn;
+    public Transform digSpot;
 
-    yield return StartCoroutine(dog.Walk(dogSpawn.position, peeSpot.position, 5));
+    void Start()
+    {
+        StartCoroutine(TestDog());
+        StartCoroutine(TestLJack());
+        StartCoroutine(TestHippy());
+        StartCoroutine(TestBird());
+        StartCoroutine(TestPig());
+    }
 
-    StartCoroutine(dog.Pee(peeSpot.position, 100));
+    IEnumerator TestDog()
+    {
+        var dog = Instantiate<Dog>(dogPrefab);
 
-    // potential implementation to respond
-    // while (!clicked) { yield return null; }
-    yield return new WaitForSeconds(3);
+        yield return StartCoroutine(dog.Walk(dogSpawn.position, peeSpot.position, 5));
 
-    yield return StartCoroutine(dog.Fetch(peeSpot.position, dogSpawn.position, 1f));
+        StartCoroutine(dog.Pee(peeSpot.position, 100));
 
-    dog.PutDown();
-  }
+        // potential implementation to respond
+        // while (!clicked) { yield return null; }
+        yield return new WaitForSeconds(3);
 
-  IEnumerator TestLJack()
-  {
-    var lJack = Instantiate<LJack>(lJackPrefab);
-    // lJack.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        yield return StartCoroutine(dog.Fetch(peeSpot.position, dogSpawn.position, 1f));
 
-    yield return StartCoroutine(lJack.Walk(lJackSpawn.position, cutSpot.position, 5));
+        dog.PutDown();
+    }
 
-    StartCoroutine(lJack.Spin(cutSpot.position));
+    IEnumerator TestLJack()
+    {
+        var lJack = Instantiate<LJack>(lJackPrefab);
+        // lJack.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
-    // potential implementation to respond
-    // while (!hugged) { yield return null; }
-    yield return new WaitForSeconds(3);
+        yield return StartCoroutine(lJack.Walk(lJackSpawn.position, cutSpot.position, 5));
 
-    yield return StartCoroutine(lJack.Leave(cutSpot.position, lJackSpawn.position, 3f));
+        StartCoroutine(lJack.Spin(cutSpot.position));
 
-    lJack.PutDown();
-  }
+        // potential implementation to respond
+        // while (!hugged) { yield return null; }
+        yield return new WaitForSeconds(3);
 
-  IEnumerator TestHippy()
-  {
-    yield return new WaitForSeconds(4);
+        yield return StartCoroutine(lJack.Leave(cutSpot.position, lJackSpawn.position, 3f));
 
-    var hippy = Instantiate<Hippy>(hippyPrefab);
-    // hippy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        lJack.PutDown();
+    }
 
-    yield return StartCoroutine(hippy.Walk(hippySpawn.position, hugSpot.position, 2));
+    IEnumerator TestHippy()
+    {
+        yield return new WaitForSeconds(4);
 
-    StartCoroutine(hippy.Hug(hugSpot.position));
+        var hippy = Instantiate<Hippy>(hippyPrefab);
+        // hippy.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
-    yield return new WaitForSeconds(2);
+        yield return StartCoroutine(hippy.Walk(hippySpawn.position, hugSpot.position, 2));
 
-    yield return StartCoroutine(hippy.Walk(hugSpot.position, hippySpawn.position, 6f));
+        StartCoroutine(hippy.Hug(hugSpot.position));
 
-    hippy.PutDown();
-  }
+        yield return new WaitForSeconds(2);
+
+        yield return StartCoroutine(hippy.Walk(hugSpot.position, hippySpawn.position, 6f));
+
+        hippy.PutDown();
+    }
+
+    IEnumerator TestBird()
+    {
+        var bird = Instantiate<Bird>(birdPrefab);
+
+        yield return StartCoroutine(bird.Fly(birdSpawn.position, birdEnd.position, 6));
+
+        bird.PutDown();
+    }
+
+    IEnumerator TestPig()
+    {
+        var pig = Instantiate<Pig>(pigPrefab);
+
+        yield return StartCoroutine(pig.Walk(pigSpawn.position, digSpot.position, 5));
+
+        StartCoroutine(pig.Dig(digSpot.position, 100));
+
+        // potential implementation to respond
+        // while (!clicked) { yield return null; }
+        yield return new WaitForSeconds(3);
+
+        yield return StartCoroutine(pig.Leave(digSpot.position, pigSpawn.position, 1f));
+
+        pig.PutDown();
+    }
 }

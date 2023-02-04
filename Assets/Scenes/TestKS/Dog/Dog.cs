@@ -5,102 +5,102 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Dog : MonoBehaviour
 {
-  private Animator _animator;
+    private Animator _animator;
 
-  private class ActionRef { }
-  private ActionRef _actionRef;
+    private class ActionRef { }
+    private ActionRef _actionRef;
 
-  public ParticleSystem peeEmitter;
-  public Transform bodyTransform;
+    public ParticleSystem peeEmitter;
+    public Transform bodyTransform;
 
-  void Awake()
-  {
-    _animator = GetComponent<Animator>();
-  }
-
-  public IEnumerator Walk(Vector3 from, Vector3 to, float duration)
-  {
-    var actionRef = new ActionRef();
-    _actionRef = actionRef;
-
-    _animator.Play("dog_walk");
-    float startTime = Time.time;
-
-    while (Time.time < startTime + duration)
+    void Awake()
     {
-      if (_actionRef != actionRef)
-      {
-        Debug.Log("Walk animation interrupted");
-        yield break;
-      }
-
-      float t = (Time.time - startTime) / duration;
-      transform.position = Vector2.Lerp(from, to, t);
-
-      yield return null;
+        _animator = GetComponent<Animator>();
     }
 
-    transform.position = to;
-  }
-
-  public IEnumerator Pee(Vector3 peeSpot, float peeIntensity)
-  {
-    var actionRef = new ActionRef();
-    _actionRef = actionRef;
-
-    _animator.Play("dog_pee");
-    peeEmitter.Play();
-    // TODO: maybe not hardcode
-    bodyTransform.localScale = new Vector3(-1, 1, 1);
-
-    while (true)
+    public IEnumerator Walk(Vector3 from, Vector3 to, float duration)
     {
-      if (_actionRef != actionRef)
-      {
-        Debug.Log("Pee animation interrupted");
-        peeEmitter.Stop();
-        yield break;
-      }
+        var actionRef = new ActionRef();
+        _actionRef = actionRef;
 
-      yield return null;
-    }
-  }
+        _animator.Play("dog_walk");
+        float startTime = Time.time;
 
-  public IEnumerator Fetch(Vector3 from, Vector3 to, float duration)
-  {
-    var actionRef = new ActionRef();
-    _actionRef = actionRef;
+        while (Time.time < startTime + duration)
+        {
+            if (_actionRef != actionRef)
+            {
+                Debug.Log("Walk animation interrupted");
+                yield break;
+            }
 
-    _animator.Play("dog_jump");
-    float startTime = Time.time;
-    // TODO: maybe not hardcode
-    bodyTransform.localScale = new Vector3(-1, 1, 1);
+            float t = (Time.time - startTime) / duration;
+            transform.position = Vector2.Lerp(from, to, t);
 
-    while (Time.time < startTime + duration)
-    {
-      if (_actionRef != actionRef)
-      {
-        Debug.Log("Fetch animation interrupted");
-        yield break;
-      }
+            yield return null;
+        }
 
-      float t = (Time.time - startTime) / duration;
-      transform.position = Vector2.Lerp(from, to, t);
-
-      yield return null;
+        transform.position = to;
     }
 
-    transform.position = to;
-  }
+    public IEnumerator Pee(Vector3 peeSpot, float peeIntensity)
+    {
+        var actionRef = new ActionRef();
+        _actionRef = actionRef;
 
-  public void Stop()
-  {
-    _actionRef = null;
-  }
+        _animator.Play("dog_pee");
+        peeEmitter.Play();
+        // TODO: maybe not hardcode
+        bodyTransform.localScale = new Vector3(-1, 1, 1);
 
-  public void PutDown()
-  {
-    _actionRef = null;
-    Destroy(gameObject);
-  }
+        while (true)
+        {
+            if (_actionRef != actionRef)
+            {
+                Debug.Log("Pee animation interrupted");
+                peeEmitter.Stop();
+                yield break;
+            }
+
+            yield return null;
+        }
+    }
+
+    public IEnumerator Fetch(Vector3 from, Vector3 to, float duration)
+    {
+        var actionRef = new ActionRef();
+        _actionRef = actionRef;
+
+        _animator.Play("dog_jump");
+        float startTime = Time.time;
+        // TODO: maybe not hardcode
+        bodyTransform.localScale = new Vector3(-1, 1, 1);
+
+        while (Time.time < startTime + duration)
+        {
+            if (_actionRef != actionRef)
+            {
+                Debug.Log("Fetch animation interrupted");
+                yield break;
+            }
+
+            float t = (Time.time - startTime) / duration;
+            transform.position = Vector2.Lerp(from, to, t);
+
+            yield return null;
+        }
+
+        transform.position = to;
+    }
+
+    public void Stop()
+    {
+        _actionRef = null;
+    }
+
+    public void PutDown()
+    {
+        _actionRef = null;
+        Destroy(gameObject);
+    }
 }
