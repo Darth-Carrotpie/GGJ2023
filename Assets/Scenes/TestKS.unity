@@ -393,6 +393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 737033219}
   - component: {fileID: 737033218}
+  - component: {fileID: 737033220}
   m_Layer: 0
   m_Name: TestKS
   m_TagString: Untagged
@@ -427,6 +428,7 @@ MonoBehaviour:
   pigPrefab: {fileID: 7018851469691741346, guid: a3bcdded38d3a41578692b2a39337647, type: 3}
   pigSpawn: {fileID: 1365069214}
   digSpot: {fileID: 1451193100}
+  unitManager: {fileID: 6727556908146479715, guid: 686776798b0c64f88bc95648c03d8164, type: 3}
 --- !u!4 &737033219
 Transform:
   m_ObjectHideFlags: 0
@@ -442,6 +444,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &737033220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737033217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14b0203a2e03ada4d979d297902bd264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _persistent: 0
+  enableDebugging: 0
+  ignoreEvents:
+    list: []
+    indexes: 
+  showAttachedEvents: 0
+  ignoreAttachedEvents:
+    list: []
+    indexes: 
 --- !u!1 &1183910205
 GameObject:
   m_ObjectHideFlags: 0

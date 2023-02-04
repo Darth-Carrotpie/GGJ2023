@@ -24,13 +24,17 @@ public class TestKS : MonoBehaviour
     public Transform pigSpawn;
     public Transform digSpot;
 
+    public UnitManager unitManager;
+
     void Start()
     {
-        StartCoroutine(TestDog());
-        StartCoroutine(TestLJack());
-        StartCoroutine(TestHippy());
-        StartCoroutine(TestBird());
-        StartCoroutine(TestPig());
+        // StartCoroutine(TestDog());
+        // StartCoroutine(TestLJack());
+        // StartCoroutine(TestHippy());
+        // StartCoroutine(TestBird());
+        // StartCoroutine(TestPig());
+        var manager = Instantiate<UnitManager>(unitManager);
+        Debug.Log(manager.DogCount());
     }
 
     IEnumerator TestDog()
@@ -39,7 +43,7 @@ public class TestKS : MonoBehaviour
 
         yield return StartCoroutine(dog.Walk(dogSpawn.position, peeSpot.position, 5));
 
-        StartCoroutine(dog.Pee(peeSpot.position, 100));
+        StartCoroutine(dog.Pee(peeSpot.position));
 
         // potential implementation to respond
         // while (!clicked) { yield return null; }

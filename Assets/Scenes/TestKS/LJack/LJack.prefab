@@ -450,6 +450,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec2a9d57ae07e4198a2f92b4ccfc1fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSwing:
+    m_PersistentCalls:
+      m_Calls: []
+  swingInterval: 1
 --- !u!95 &8954364291999208598
 Animator:
   serializedVersion: 5

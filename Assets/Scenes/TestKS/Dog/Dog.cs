@@ -17,6 +17,9 @@ public class Dog : MonoBehaviour
 
     private AudioSource _soundSource;
 
+    public UnityEngine.Events.UnityEvent onPee;
+    public float peeInterval;
+
     void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -49,7 +52,7 @@ public class Dog : MonoBehaviour
         transform.position = to;
     }
 
-    public IEnumerator Pee(Vector3 peeSpot, float peeIntensity)
+    public IEnumerator Pee(Vector3 peeSpot)
     {
         var actionRef = new ActionRef();
         _actionRef = actionRef;
@@ -62,6 +65,7 @@ public class Dog : MonoBehaviour
         peeEmitter.Play();
         // TODO: maybe not hardcode
         bodyTransform.localScale = new Vector3(-1, 1, 1);
+        float nextPee = Time.time + peeInterval;
 
         while (true)
         {
@@ -71,6 +75,12 @@ public class Dog : MonoBehaviour
                 peeEmitter.Stop();
                 _soundSource.Stop();
                 yield break;
+            }
+
+            if (Time.time < nextPee)
+            {
+                nextPee += peeInterval;
+                onPee.Invoke();
             }
 
             yield return null;

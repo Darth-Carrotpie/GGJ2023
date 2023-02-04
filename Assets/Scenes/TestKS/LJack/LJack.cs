@@ -10,6 +10,9 @@ public class LJack : MonoBehaviour
     private class ActionRef { }
     private ActionRef _actionRef;
 
+    public UnityEngine.Events.UnityEvent onSwing;
+    public float swingInterval;
+
     void Awake()
     {
         _animator = GetComponent<Animator>();
