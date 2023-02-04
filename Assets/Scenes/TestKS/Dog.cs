@@ -2,21 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class Dog : MonoBehaviour
 {
-  public Sprite walkSprite;
-  public Sprite peeSprite;
-  public Sprite jumpSprite;
+  private Animator _animator;
 
   private class ActionRef { }
   private ActionRef _actionRef;
+
+  void Awake()
+  {
+    _animator = GetComponent<Animator>();
+  }
 
   public IEnumerator Walk(Vector3 from, Vector3 to, float duration)
   {
     var actionRef = new ActionRef();
     _actionRef = actionRef;
 
-    GetComponent<SpriteRenderer>().sprite = walkSprite;
+    _animator.Play("dog_walk");
     float startTime = Time.time;
 
     while (Time.time < startTime + duration)
@@ -41,7 +45,7 @@ public class Dog : MonoBehaviour
     var actionRef = new ActionRef();
     _actionRef = actionRef;
 
-    GetComponent<SpriteRenderer>().sprite = peeSprite;
+    _animator.Play("dog_pee");
 
     while (true)
     {
@@ -60,7 +64,7 @@ public class Dog : MonoBehaviour
     var actionRef = new ActionRef();
     _actionRef = actionRef;
 
-    GetComponent<SpriteRenderer>().sprite = jumpSprite;
+    _animator.Play("dog_jump");
     float startTime = Time.time;
 
     while (Time.time < startTime + duration)
