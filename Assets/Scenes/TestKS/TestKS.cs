@@ -16,11 +16,16 @@ public class TestKS : MonoBehaviour
   public Transform hippySpawn;
   public Transform hugSpot;
 
+  public Bird birdPrefab;
+  public Transform birdSpawn;
+  public Transform birdEnd;
+
   void Start()
   {
     StartCoroutine(TestDog());
     StartCoroutine(TestLJack());
     StartCoroutine(TestHippy());
+    StartCoroutine(TestBird());
   }
 
   IEnumerator TestDog()
@@ -74,5 +79,14 @@ public class TestKS : MonoBehaviour
     yield return StartCoroutine(hippy.Walk(hugSpot.position, hippySpawn.position, 6f));
 
     hippy.PutDown();
+  }
+
+  IEnumerator TestBird()
+  {
+    var bird = Instantiate<Bird>(birdPrefab);
+
+    yield return StartCoroutine(bird.Fly(birdSpawn.position, birdEnd.position, 6));
+
+    bird.PutDown();
   }
 }
