@@ -22,6 +22,7 @@ public class FloatToTarget : MonoBehaviour
         Destroy(this.gameObject, 1.45f);
         particleSys.emission.GetBursts(new ParticleSystem.Burst[] { new ParticleSystem.Burst(0.0f, recourseCount)});
         particleSys.GetComponent<ParticleSystemRenderer>().material = material;
+        transform.position = spawnPos;
 
     }
 

@@ -13,9 +13,16 @@ public class Pig : MonoBehaviour
     public ParticleSystem dirtEmitter;
     public Transform bodyTransform;
 
+    public AudioClip entryClip;
+    public AudioClip damageClip;
+
+    private AudioSource _soundSource;
+
     void Awake()
     {
         _animator = GetComponent<Animator>();
+        _soundSource = this.gameObject.AddComponent<AudioSource>();
+        _soundSource.PlayOneShot(entryClip);
     }
 
     public IEnumerator Walk(Vector3 from, Vector3 to, float duration)
@@ -50,6 +57,10 @@ public class Pig : MonoBehaviour
 
         _animator.Play("dig");
 
+        _soundSource.clip = damageClip;
+        _soundSource.loop = true;
+        _soundSource.Play();
+
         float digTime = 0.25f + Time.time;
 
         while (true)
@@ -57,6 +68,7 @@ public class Pig : MonoBehaviour
             if (_actionRef != actionRef)
             {
                 Debug.Log("Dig animation interrupted");
+                _soundSource.Stop();
                 yield break;
             }
 

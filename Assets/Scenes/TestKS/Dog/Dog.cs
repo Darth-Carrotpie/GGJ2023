@@ -34,6 +34,7 @@ public class Dog : MonoBehaviour
         foreach (var sr in GetComponentsInChildren<SpriteRenderer>())
         {
             sr.color = c;
+            sr.sortingOrder = 201;
         }
     }
 
@@ -87,7 +88,7 @@ public class Dog : MonoBehaviour
                 yield break;
             }
 
-            if (Time.time < nextPee)
+            if (nextPee < Time.time)
             {
                 nextPee += peeInterval;
                 onPee.Invoke();

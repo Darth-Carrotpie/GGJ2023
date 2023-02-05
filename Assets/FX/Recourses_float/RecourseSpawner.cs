@@ -29,9 +29,10 @@ public class RecourseSpawner : MonoBehaviour
         GameObject newObject = Instantiate(recourse) as GameObject;
         var getFloatToTarget = newObject.GetComponent<FloatToTarget>();
         foreach(Material mat in mats){
-            Debug.Log(mat.name);
+            
             if (mat.name == $"{recourseTag}_mat")
                 getFloatToTarget.material = mat;
+                Debug.Log(mat.name);
         }
         getFloatToTarget.recourseCount = ecourseCount;
         getFloatToTarget.recourseTag = recourseTag;

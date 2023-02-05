@@ -29,7 +29,15 @@ public class SpawnStick : MonoBehaviour
 
     private void OnSwipe(string swipe){
         UnityEngine.Debug.Log(swipe);
-        Create(swipe);
+        if (swipe == "Right")
+        {
+            EventCoordinator.TriggerEvent(EventName.Hostiles.DogFetchStick(), GameMessage.Write());
+            Create(swipe);
+        }
+        if (swipe == "Left")
+        {
+            EventCoordinator.TriggerEvent(EventName.Hostiles.SendHippy(), GameMessage.Write());
+        }
     }
 
     private void OnDisable()
