@@ -19,7 +19,7 @@ public class StickFlick : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        anchorForRot = GameObject.FindGameObjectsWithTag("Anchor").First();
+        // anchorForRot = GameObject.FindGameObjectsWithTag("Anchor").First();
         Destroy(this.gameObject, destoryAfter);
     }
 
@@ -29,14 +29,13 @@ public class StickFlick : MonoBehaviour
         if (direction == "Right"){
         transform.RotateAround(this.transform.position, Vector3.back, rotSpeed * Time.deltaTime);
         transform.Translate(Vector3.right * Time.deltaTime * speed, Space.World);
-        Debug.Log("normal right throw");
+        // Debug.Log("normal right throw");
         }
         else if(direction == "Left"){
         transform.RotateAround(this.transform.position, Vector3.forward, rotSpeed * Time.deltaTime);
-        //transform.Translate(Vector3.left * Time.deltaTime * speed, Space.World);
-        transform.RotateAround(anchorForRot.transform.position, Vector3.forward, arcSpeed * Time.deltaTime);
-        Debug.Log("arc left throw");
+        transform.Translate(Vector3.left * Time.deltaTime * speed, Space.World);
+        // transform.RotateAround(anchorForRot.transform.position, Vector3.forward, arcSpeed * Time.deltaTime);
+        // Debug.Log("arc left throw");
         }
-
     }
 }

@@ -156,7 +156,7 @@ public class UnitManager : MonoBehaviour
         var hippy = Instantiate<Hippy>(hippyPrefab);
         var offset = lJack.transform.position - cutSpot.position;
 
-        yield return StartCoroutine(hippy.Walk(hippySpawn.position + offset, hugSpot.position + offset, 2));
+        yield return StartCoroutine(hippy.Walk(hippySpawn.position + offset, hugSpot.position + offset, 1));
 
         StartCoroutine(hippy.Hug(hugSpot.position + offset));
 
