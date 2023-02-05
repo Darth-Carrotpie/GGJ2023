@@ -20,6 +20,7 @@ public class HealthLogic : MonoBehaviour
         EventCoordinator.StartListening(EventName.Hostiles.DamageTrunk(), TakeDamage);
         EventCoordinator.StartListening(EventName.Hostiles.DamageRoots(), TakeDamage);
         EventCoordinator.StartListening(EventName.Health.HealTree(), TakeHealing);
+        EventCoordinator.StartListening(EventName.Economy.UpgradeRoots(), IncreaseMaxHealth);
     }
 
     void OnDestroy()
@@ -43,6 +44,12 @@ public class HealthLogic : MonoBehaviour
     void TakeHealing(GameMessage msg)
     {
         ChangeHealth(msg.health);
+    }
+
+    void IncreaseMaxHealth(GameMessage msg)
+    {
+        this.maxHealth += 1000;
+        this.currentHealth += 1000;
     }
 
     void ChangeHealth(int amount)
