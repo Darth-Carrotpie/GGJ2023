@@ -28,6 +28,7 @@ public class Hippy : MonoBehaviour
         foreach (var sr in GetComponentsInChildren<SpriteRenderer>())
         {
             sr.color = c;
+            sr.sortingOrder = 201;
         }
     }
 

@@ -101,11 +101,13 @@ public class UnitManager : MonoBehaviour
 
     void OnPee()
     {
+        // Debug.Log("OnPEE");
         EventCoordinator.TriggerEvent(EventName.Hostiles.DamageRoots(), GameMessage.Write().WithDamage(peeDamage));
     }
 
     void OnAxe()
     {
+        // Debug.Log("OnAXE");
         EventCoordinator.TriggerEvent(EventName.Hostiles.DamageTrunk(), GameMessage.Write().WithDamage(axeDamage));
     }
 
@@ -176,6 +178,7 @@ public class UnitManager : MonoBehaviour
     {
         Vector3 offset = Random.insideUnitCircle * locationSpread;
         offset.z = -offset.x * 0.1f + offset.y;
+        offset.x *= 2;
         return offset;
     }
 

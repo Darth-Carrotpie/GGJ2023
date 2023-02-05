@@ -32,6 +32,7 @@ public class LJack : MonoBehaviour
         foreach (var sr in GetComponentsInChildren<SpriteRenderer>())
         {
             sr.color = c;
+            sr.sortingOrder = 201;
         }
     }
 
@@ -71,6 +72,8 @@ public class LJack : MonoBehaviour
         _soundSource.loop = true;
         _soundSource.Play();
 
+        float nextSwing = Time.time + swingInterval;
+
         while (true)
         {
             if (_actionRef != actionRef)
@@ -78,6 +81,12 @@ public class LJack : MonoBehaviour
                 Debug.Log("Spin animation interrupted");
                 _soundSource.Stop();
                 yield break;
+            }
+
+            if (nextSwing < Time.time)
+            {
+                nextSwing += swingInterval;
+                onSwing.Invoke();
             }
 
             yield return null;
