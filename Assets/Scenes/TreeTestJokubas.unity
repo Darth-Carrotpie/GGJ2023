@@ -149,9 +149,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127005847}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: -2.36, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0.262, y: -2.152, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1941043296}
   m_RootOrder: -1
@@ -221,6 +221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 127005849}
+  livePrefab: {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  deadPrefab: {fileID: 3458149916980922258, guid: 18168512d330f024e9b49ca98dc331cd, type: 3}
 --- !u!1 &260518276
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,9 +249,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260518276}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.92, y: -2.69, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0.705, y: -2.405, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1941043296}
   m_RootOrder: -1
@@ -319,6 +321,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 260518278}
+  livePrefab: {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  deadPrefab: {fileID: 3458149916980922258, guid: 18168512d330f024e9b49ca98dc331cd, type: 3}
 --- !u!1 &417041852
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,9 +349,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417041852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.08, y: -3.35, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0.197, y: -3.019, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1941043296}
   m_RootOrder: -1
@@ -417,6 +421,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 417041854}
+  livePrefab: {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  deadPrefab: {fileID: 3458149916980922258, guid: 18168512d330f024e9b49ca98dc331cd, type: 3}
 --- !u!1 &478835280
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,9 +449,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 478835280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.79, y: -2.9, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.782, y: -2.392, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1941043296}
   m_RootOrder: -1
@@ -515,6 +521,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 478835282}
+  livePrefab: {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  deadPrefab: {fileID: 3458149916980922258, guid: 18168512d330f024e9b49ca98dc331cd, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,9 +685,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539324440}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.72, y: -3.58, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.686, y: -3.349, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1941043296}
   m_RootOrder: -1
@@ -749,6 +757,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 539324442}
+  livePrefab: {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  deadPrefab: {fileID: 3458149916980922258, guid: 18168512d330f024e9b49ca98dc331cd, type: 3}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,9 +896,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668778927}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.29, y: -3.08, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0.479, y: -2.734, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1941043296}
   m_RootOrder: -1
@@ -958,6 +968,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 668778929}
+  livePrefab: {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  deadPrefab: {fileID: 3458149916980922258, guid: 18168512d330f024e9b49ca98dc331cd, type: 3}
 --- !u!1 &703502924
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,9 +1040,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730081861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.45, y: -3.79, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.954, y: -3.056, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1941043296}
   m_RootOrder: -1
@@ -1100,6 +1112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 730081863}
+  livePrefab: {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  deadPrefab: {fileID: 3458149916980922258, guid: 18168512d330f024e9b49ca98dc331cd, type: 3}
 --- !u!1 &825030695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,8 +1141,8 @@ Transform:
   m_GameObject: {fileID: 825030695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.42, y: -2.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1941043296}
   m_RootOrder: -1
@@ -1198,6 +1212,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 825030697}
+  livePrefab: {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  deadPrefab: {fileID: 3458149916980922258, guid: 18168512d330f024e9b49ca98dc331cd, type: 3}
 --- !u!1 &877951415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,9 +1240,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877951415}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.46, y: -3.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.573, y: -2.947, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1941043296}
   m_RootOrder: -1
@@ -1296,6 +1312,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 877951417}
+  livePrefab: {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  deadPrefab: {fileID: 3458149916980922258, guid: 18168512d330f024e9b49ca98dc331cd, type: 3}
 --- !u!1 &1110299088
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,9 +1340,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110299088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: -3.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.265, y: -3.271, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1941043296}
   m_RootOrder: -1
@@ -1394,6 +1412,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 1110299090}
+  livePrefab: {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  deadPrefab: {fileID: 3458149916980922258, guid: 18168512d330f024e9b49ca98dc331cd, type: 3}
 --- !u!1 &1139922785
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,9 +1440,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139922785}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.18, y: -3.47, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0.826, y: -2.678, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1941043296}
   m_RootOrder: -1
@@ -1492,6 +1512,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 1139922787}
+  livePrefab: {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  deadPrefab: {fileID: 3458149916980922258, guid: 18168512d330f024e9b49ca98dc331cd, type: 3}
 --- !u!4 &1162925889 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3205555166688860766, guid: 639936ffd7370ad49a1adfbd87192ed4, type: 3}
@@ -1523,9 +1545,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224990040}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.17, y: -3.79, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0.277, y: -3.427, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1941043296}
   m_RootOrder: -1
@@ -1595,6 +1617,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 1224990042}
+  livePrefab: {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  deadPrefab: {fileID: 3458149916980922258, guid: 18168512d330f024e9b49ca98dc331cd, type: 3}
 --- !u!1 &1310148706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1621,9 +1645,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1310148706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.86, y: -2.43, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.26, y: -2.215, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1941043296}
   m_RootOrder: -1
@@ -1693,6 +1717,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 1310148708}
+  livePrefab: {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  deadPrefab: {fileID: 3458149916980922258, guid: 18168512d330f024e9b49ca98dc331cd, type: 3}
 --- !u!1 &1547624906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1719,9 +1745,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547624906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.07, y: -3.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -1.166, y: -2.596, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1941043296}
   m_RootOrder: -1
@@ -1791,6 +1817,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 1547624908}
+  livePrefab: {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  deadPrefab: {fileID: 3458149916980922258, guid: 18168512d330f024e9b49ca98dc331cd, type: 3}
 --- !u!1 &1664812153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1870,9 +1898,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667928479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.51, y: -3.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0.629, y: -3.053, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1941043296}
   m_RootOrder: -1
@@ -1942,6 +1970,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 1667928481}
+  livePrefab: {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  deadPrefab: {fileID: 3458149916980922258, guid: 18168512d330f024e9b49ca98dc331cd, type: 3}
 --- !u!1 &1670144009 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3205555167433087784, guid: 639936ffd7370ad49a1adfbd87192ed4, type: 3}
@@ -2311,9 +2341,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672353291}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.33, y: -2.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.653, y: -2.708, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1941043296}
   m_RootOrder: -1
@@ -2383,6 +2413,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 1672353293}
+  livePrefab: {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  deadPrefab: {fileID: 3458149916980922258, guid: 18168512d330f024e9b49ca98dc331cd, type: 3}
 --- !u!1 &1773557998
 GameObject:
   m_ObjectHideFlags: 0
@@ -2409,9 +2441,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773557998}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.63, y: -3.18, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 1.001, y: -2.677, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1941043296}
   m_RootOrder: -1
@@ -2481,6 +2513,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 1773558000}
+  livePrefab: {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  deadPrefab: {fileID: 3458149916980922258, guid: 18168512d330f024e9b49ca98dc331cd, type: 3}
 --- !u!1 &1784365290
 GameObject:
   m_ObjectHideFlags: 0
@@ -2507,9 +2541,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784365290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.77, y: -3.17, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.03, y: -2.678, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1941043296}
   m_RootOrder: -1
@@ -2579,6 +2613,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 1784365292}
+  livePrefab: {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  deadPrefab: {fileID: 3458149916980922258, guid: 18168512d330f024e9b49ca98dc331cd, type: 3}
 --- !u!1 &1941043295
 GameObject:
   m_ObjectHideFlags: 0
@@ -2647,8 +2683,8 @@ MonoBehaviour:
   targetPotatoes: 0
   startingPotatoes: 1
   potatoSizeMod: 0.2
-  potatoPrefabs:
-  - {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  potatoLivePrefab: {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  potatoDeadPrefab: {fileID: 3458149916980922258, guid: 18168512d330f024e9b49ca98dc331cd, type: 3}
   potatoNodes: []
 --- !u!1 &1956663529
 GameObject:
@@ -2676,9 +2712,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956663529}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.41, y: -2.65, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.205, y: -2.912, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1941043296}
   m_RootOrder: -1
@@ -2748,6 +2784,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 1956663531}
+  livePrefab: {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  deadPrefab: {fileID: 3458149916980922258, guid: 18168512d330f024e9b49ca98dc331cd, type: 3}
 --- !u!1 &2079413586
 GameObject:
   m_ObjectHideFlags: 0
@@ -2818,9 +2856,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130386266}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.24, y: -2.87, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0.186, y: -2.447, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1941043296}
   m_RootOrder: -1
@@ -2890,6 +2928,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 2130386268}
+  livePrefab: {fileID: 3458149916980922258, guid: 5741f94c89f60ca498f32d32873109ee, type: 3}
+  deadPrefab: {fileID: 3458149916980922258, guid: 18168512d330f024e9b49ca98dc331cd, type: 3}
 --- !u!1001 &2802766878244074875
 PrefabInstance:
   m_ObjectHideFlags: 0

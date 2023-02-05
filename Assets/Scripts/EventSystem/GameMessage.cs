@@ -43,6 +43,66 @@ public class GameMessage : BaseMessage {
         leavesAmountSet = true;
         return this;
     }
+    private bool dropletAmountSet;
+    public int dropletAmount {
+        get {
+            if (dropletAmountSet)
+                return _dropletAmount;
+            else throw new Exception("No _dropletAmount was set before request for GameMessage: " + this);
+        }
+        set { _dropletAmount = value; }
+    }
+    private int _dropletAmount;
+    public GameMessage WithDropletAmount(int value) {
+        _dropletAmount = value;
+        dropletAmountSet = true;
+        return this;
+    }
+    private bool branchAmountSet;
+    public int branchAmount {
+        get {
+            if (branchAmountSet)
+                return _branchAmount;
+            else throw new Exception("No _branchAmount was set before request for GameMessage: " + this);
+        }
+        set { _branchAmount = value; }
+    }
+    private int _branchAmount;
+    public GameMessage WithBranchAmount(int value) {
+        _branchAmount = value;
+        branchAmountSet = true;
+        return this;
+    }
+    private bool heartAmountSet;
+    public int heartAmount {
+        get {
+            if (heartAmountSet)
+                return _heartAmount;
+            else throw new Exception("No _heartAmount was set before request for GameMessage: " + this);
+        }
+        set { _heartAmount = value; }
+    }
+    private int _heartAmount;
+    public GameMessage WithHearthAmount(int value) {
+        _heartAmount = value;
+        heartAmountSet = true;
+        return this;
+    }
+    private bool deltaSet;
+    public int delta {
+        get {
+            if (deltaSet)
+                return _delta;
+            else throw new Exception("No _delta was set before request for GameMessage: " + this);
+        }
+        set { _delta = value; }
+    }
+    private int _delta;
+    public GameMessage WithDelta(int value) {
+        _delta = value;
+        deltaSet = true;
+        return this;
+    }
     private bool potatoesAmountSet;
     public int potatoesAmount {
         get {
@@ -117,7 +177,7 @@ public class GameMessage : BaseMessage {
         healthSet = true;
         return this;
     }
-    
+
     //example to handle empty messages better
     private string _strMessage;
     public string strMessage {

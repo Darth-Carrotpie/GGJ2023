@@ -3,7 +3,10 @@ guid: 3343b9ee6a93b402b9b0acdf97e02610
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - peeEmitter: {instanceID: 0}
+  - bodyTransform: {instanceID: 0}
+  - barkClip: {fileID: 8300000, guid: c14e63297e00cd743b7d2d69ae193ec1, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -10,8 +10,16 @@ public class PotatoesFactory : MonoBehaviour {
     public int startingPotatoes = 1;
     public float potatoSizeMod = 0.01f;
 
-    public List<GameObject> potatoPrefabs = new List<GameObject>();
+    public GameObject potatoLivePrefab;
+    public GameObject potatoDeadPrefab;
+
     public List<GameObject> potatoNodes = new List<GameObject>();
+
+    /*
+        1. Node has function to swap between live and dead prefabs being rendered.
+        2. Factory listens to events and makes specific nodes dead
+    */
+
 
     void Start() {
         EventCoordinator.StartListening(EventName.UI.ModifyPotatoes(), ModifyPotatoes);
@@ -19,6 +27,8 @@ public class PotatoesFactory : MonoBehaviour {
         ReadNodes();
         GenerateInitialPotatoes();
         AdjustPotatoes(startingPotatoes);
+
+        EventCoordinator.StartListening(EventName.Health.CurrentPercent(), LivePotatoesByHealth);
     }
 
     void ReadNodes() {
@@ -31,15 +41,21 @@ public class PotatoesFactory : MonoBehaviour {
 
     void GenerateInitialPotatoes() {
         for (int i = 0; i < potatoesMax; i++) {
-            GameObject newPotato = Instantiate(potatoPrefabs[Random.Range(0, potatoPrefabs.Count)]);
+            int flipX = Random.Range(0, 1f) > 0.5f ? 1 : -1;
+
+            GameObject newPotato = Instantiate(potatoLivePrefab);
             newPotato.transform.parent = potatoNodes[i].transform;
             newPotato.transform.localPosition = Vector3.zero;
-            potatoNodes[i].GetComponent<PotatoNode>().Init();
-            int flipX = Random.Range(0, 1f) > 0.5f ? 1 : -1;
             newPotato.transform.localScale = new Vector3(flipX, 1, 1) * potatoSizeMod;
-            
             newPotato.GetComponent<SpriteRenderer>().sortingOrder = 1;
-            Debug.Log(newPotato.GetComponent<SpriteRenderer>().sprite);
+            
+            GameObject newDeadPotato = Instantiate(potatoDeadPrefab);
+            newDeadPotato.transform.parent = potatoNodes[i].transform;
+            newDeadPotato.transform.localPosition = Vector3.zero;
+            newDeadPotato.transform.localScale = new Vector3(flipX, 1, 1) * potatoSizeMod;
+            newDeadPotato.GetComponent<SpriteRenderer>().sortingOrder = 1;
+            
+            potatoNodes[i].GetComponent<PotatoNode>().Init();
         }
     }
 
@@ -60,6 +76,16 @@ public class PotatoesFactory : MonoBehaviour {
                 potatoNodes[potatoesCurrent + i].GetComponent<PotatoNode>().Deactivate();
             }
         potatoesCurrent = targetPotatoes;
+    }
+
+    void LivePotatoesByHealth(GameMessage msg) {
+        int livePotatoes = (int) Mathf.Ceil(potatoesCurrent * msg.health / 100f);
+        for (int i = 0; i < livePotatoes; i++) {
+            potatoNodes[i].GetComponent<PotatoNode>().Resurrect();
+        }
+        for (int i = livePotatoes; i < potatoesCurrent; i++) {
+            potatoNodes[i].GetComponent<PotatoNode>().Die();
+        }
     }
 
 }

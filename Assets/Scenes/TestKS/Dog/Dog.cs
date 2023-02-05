@@ -5,102 +5,133 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Dog : MonoBehaviour
 {
-  private Animator _animator;
+    private Animator _animator;
 
-  private class ActionRef { }
-  private ActionRef _actionRef;
+    private class ActionRef { }
+    private ActionRef _actionRef;
 
-  public ParticleSystem peeEmitter;
-  public Transform bodyTransform;
+    public ParticleSystem peeEmitter;
+    public Transform bodyTransform;
+    public AudioClip barkClip;
+    public AudioClip peeClip;
 
-  void Awake()
-  {
-    _animator = GetComponent<Animator>();
-  }
+    private AudioSource _soundSource;
 
-  public IEnumerator Walk(Vector3 from, Vector3 to, float duration)
-  {
-    var actionRef = new ActionRef();
-    _actionRef = actionRef;
+    public UnityEngine.Events.UnityEvent onPee;
+    public float peeInterval;
 
-    _animator.Play("dog_walk");
-    float startTime = Time.time;
-
-    while (Time.time < startTime + duration)
+    void Awake()
     {
-      if (_actionRef != actionRef)
-      {
-        Debug.Log("Walk animation interrupted");
-        yield break;
-      }
-
-      float t = (Time.time - startTime) / duration;
-      transform.position = Vector2.Lerp(from, to, t);
-
-      yield return null;
+        _animator = GetComponent<Animator>();
+        _soundSource = this.gameObject.AddComponent<AudioSource>();
+        _soundSource.PlayOneShot(barkClip);
     }
 
-    transform.position = to;
-  }
-
-  public IEnumerator Pee(Vector3 peeSpot, float peeIntensity)
-  {
-    var actionRef = new ActionRef();
-    _actionRef = actionRef;
-
-    _animator.Play("dog_pee");
-    peeEmitter.Play();
-    // TODO: maybe not hardcode
-    bodyTransform.localScale = new Vector3(-1, 1, 1);
-
-    while (true)
+    void Start()
     {
-      if (_actionRef != actionRef)
-      {
-        Debug.Log("Pee animation interrupted");
-        peeEmitter.Stop();
-        yield break;
-      }
-
-      yield return null;
-    }
-  }
-
-  public IEnumerator Fetch(Vector3 from, Vector3 to, float duration)
-  {
-    var actionRef = new ActionRef();
-    _actionRef = actionRef;
-
-    _animator.Play("dog_jump");
-    float startTime = Time.time;
-    // TODO: maybe not hardcode
-    bodyTransform.localScale = new Vector3(-1, 1, 1);
-
-    while (Time.time < startTime + duration)
-    {
-      if (_actionRef != actionRef)
-      {
-        Debug.Log("Fetch animation interrupted");
-        yield break;
-      }
-
-      float t = (Time.time - startTime) / duration;
-      transform.position = Vector2.Lerp(from, to, t);
-
-      yield return null;
+        var t = Random.Range(0.8f, 1.0f);
+        var c = new Color(t, t, t);
+        foreach (var sr in GetComponentsInChildren<SpriteRenderer>())
+        {
+            sr.color = c;
+        }
     }
 
-    transform.position = to;
-  }
+    public IEnumerator Walk(Vector3 from, Vector3 to, float duration)
+    {
+        var actionRef = new ActionRef();
+        _actionRef = actionRef;
 
-  public void Stop()
-  {
-    _actionRef = null;
-  }
+        _animator.Play("dog_walk");
+        float startTime = Time.time;
 
-  public void PutDown()
-  {
-    _actionRef = null;
-    Destroy(gameObject);
-  }
+        while (Time.time < startTime + duration)
+        {
+            if (_actionRef != actionRef)
+            {
+                Debug.Log("Walk animation interrupted");
+                yield break;
+            }
+
+            float t = (Time.time - startTime) / duration;
+            transform.position = Vector3.Lerp(from, to, t);
+
+            yield return null;
+        }
+
+        transform.position = to;
+    }
+
+    public IEnumerator Pee(Vector3 peeSpot)
+    {
+        var actionRef = new ActionRef();
+        _actionRef = actionRef;
+
+        _soundSource.clip = peeClip;
+        _soundSource.loop = true;
+        _soundSource.Play();
+
+        _animator.Play("dog_pee");
+        peeEmitter.Play();
+        // TODO: maybe not hardcode
+        bodyTransform.localScale = new Vector3(-1, 1, 1);
+        float nextPee = Time.time + peeInterval;
+
+        while (true)
+        {
+            if (_actionRef != actionRef)
+            {
+                Debug.Log("Pee animation interrupted");
+                peeEmitter.Stop();
+                _soundSource.Stop();
+                yield break;
+            }
+
+            if (Time.time < nextPee)
+            {
+                nextPee += peeInterval;
+                onPee.Invoke();
+            }
+
+            yield return null;
+        }
+    }
+
+    public IEnumerator Fetch(Vector3 from, Vector3 to, float duration)
+    {
+        var actionRef = new ActionRef();
+        _actionRef = actionRef;
+
+        _animator.Play("dog_jump");
+        float startTime = Time.time;
+        // TODO: maybe not hardcode
+        bodyTransform.localScale = new Vector3(-1, 1, 1);
+
+        while (Time.time < startTime + duration)
+        {
+            if (_actionRef != actionRef)
+            {
+                Debug.Log("Fetch animation interrupted");
+                yield break;
+            }
+
+            float t = (Time.time - startTime) / duration;
+            transform.position = Vector3.Lerp(from, to, t);
+
+            yield return null;
+        }
+
+        transform.position = to;
+    }
+
+    public void Stop()
+    {
+        _actionRef = null;
+    }
+
+    public void PutDown()
+    {
+        _actionRef = null;
+        Destroy(gameObject);
+    }
 }

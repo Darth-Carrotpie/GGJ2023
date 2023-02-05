@@ -7,7 +7,6 @@ public class LeafNode : MonoBehaviour {
     public SpriteRenderer rend;
     float fadeSpeed = 1f;
     Coroutine coroutine;
-    bool isFading;
     float currentFade = 0;
     PolygonCollider2D col;
 
@@ -39,7 +38,6 @@ public class LeafNode : MonoBehaviour {
     }
 
     IEnumerator FadeIn() {
-        isFading = true;
         while (currentFade <= 1f) {
             currentFade += Time.deltaTime * fadeSpeed;
             rend.color = new Color(1, 1, 1, currentFade);
@@ -47,11 +45,9 @@ public class LeafNode : MonoBehaviour {
         }
         currentFade = 1f;
         rend.color = new Color(1, 1, 1, currentFade);
-        isFading = false;
         yield return null;
     }
     IEnumerator FadeOut() {
-        isFading = true;
         while (currentFade >= 0f) {
             currentFade -= Time.deltaTime * fadeSpeed;
             rend.color = new Color(1, 1, 1, currentFade);
@@ -59,7 +55,6 @@ public class LeafNode : MonoBehaviour {
         }
         currentFade = 0f;
         rend.color = new Color(1, 1, 1, currentFade);
-        isFading = false;
         yield return null;
     }
 }
