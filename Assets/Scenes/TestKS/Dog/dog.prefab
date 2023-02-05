@@ -5226,8 +5226,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   peeEmitter: {fileID: 9099028836562819523}
   bodyTransform: {fileID: 7481620711501811523}
-  barkClip: {fileID: 8300000, guid: c14e63297e00cd743b7d2d69ae193ec1, type: 3}
-  peeClip: {fileID: 8300000, guid: 53a6716d1572bac4db62ac94bd7b897f, type: 3}
+  barkClip: {fileID: 8300000, guid: 3164574352f7bb04698d2a632c7b0d20, type: 3}
+  peeClip: {fileID: 8300000, guid: 538825e01dfb6094d868a25735d3eedd, type: 3}
   onPee:
     m_PersistentCalls:
       m_Calls: []
