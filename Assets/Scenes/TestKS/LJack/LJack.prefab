@@ -450,13 +450,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec2a9d57ae07e4198a2f92b4ccfc1fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
-  entryClip: {fileID: 8300000, guid: b78a3c2deb780554cbc81d0d468f3d32, type: 3}
-  damageClip: {fileID: 8300000, guid: 6c956c2a9b73b2b44b482e1bdc260585, type: 3}
-=======
   entryClip: {fileID: 8300000, guid: fb665e131a290bc41a0e91b1b0f3f949, type: 3}
   damageClip: {fileID: 8300000, guid: d58324838e62b3a4a8510636725c4ca8, type: 3}
->>>>>>> Stashed changes
   onSwing:
     m_PersistentCalls:
       m_Calls: []
