@@ -2211,7 +2211,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2945,7 +2945,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3277,6 +3277,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5006049070513958116, guid: 4795cd810c88a5b4f895558eeaa9671f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1402529940}
+    - targetCorrespondingSourceObject: {fileID: 5006049070513958116, guid: 4795cd810c88a5b4f895558eeaa9671f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1402529944}
   m_SourcePrefab: {fileID: 100100000, guid: 4795cd810c88a5b4f895558eeaa9671f, type: 3}
 --- !u!1 &1402529935 stripped
 GameObject:
@@ -3305,6 +3308,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1438b0f846f5c4bc684b3aac0c1cc005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1402529944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402529935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1919b62cb0726e4b905efd1c08d1f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1419032128
@@ -3970,7 +3985,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5364,7 +5379,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
