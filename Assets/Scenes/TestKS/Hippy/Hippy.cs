@@ -21,6 +21,16 @@ public class Hippy : MonoBehaviour
         _soundSource.PlayOneShot(entryClip);
     }
 
+    void Start()
+    {
+        var t = Random.Range(0.8f, 1.0f);
+        var c = new Color(t, t, t);
+        foreach (var sr in GetComponentsInChildren<SpriteRenderer>())
+        {
+            sr.color = c;
+        }
+    }
+
     public IEnumerator Walk(Vector3 from, Vector3 to, float duration)
     {
         var actionRef = new ActionRef();
@@ -38,7 +48,7 @@ public class Hippy : MonoBehaviour
             }
 
             float t = (Time.time - startTime) / duration;
-            transform.position = Vector2.Lerp(from, to, t);
+            transform.position = Vector3.Lerp(from, to, t);
 
             yield return null;
         }

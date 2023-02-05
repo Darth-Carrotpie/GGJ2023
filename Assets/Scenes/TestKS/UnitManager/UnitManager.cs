@@ -20,6 +20,8 @@ public class UnitManager : MonoBehaviour
     public float lJacksPerMinute = 5;
     public int peeDamage = 100;
     public int axeDamage = 100;
+    [Range(0.0f, 10.0f)]
+    public float locationSpread = 2.0f;
 
     private float nextDogT = 60;
     private float nextLJackT = 60;
@@ -77,7 +79,7 @@ public class UnitManager : MonoBehaviour
             nextDogT += 60;
             StartCoroutine(SpawnDogCO());
         }
-        nextLJackT -= Time.deltaTime * dogsPerMinute;
+        nextLJackT -= Time.deltaTime * lJacksPerMinute;
         if (nextLJackT < 0)
         {
             nextLJackT += 60;
@@ -111,15 +113,16 @@ public class UnitManager : MonoBehaviour
     {
         var dog = Instantiate<Dog>(dogPrefab);
         dog.onPee.AddListener(OnPee);
+        var offset = Offset();
 
-        yield return StartCoroutine(dog.Walk(dogSpawn.position, peeSpot.position, 5));
+        yield return StartCoroutine(dog.Walk(dogSpawn.position + offset, peeSpot.position + offset, 5));
 
         _dogs.Enqueue(dog);
 
         // Pee until interrupted
-        yield return StartCoroutine(dog.Pee(peeSpot.position));
+        yield return StartCoroutine(dog.Pee(peeSpot.position + offset));
 
-        yield return StartCoroutine(dog.Fetch(peeSpot.position, dogSpawn.position, 2));
+        yield return StartCoroutine(dog.Fetch(peeSpot.position + offset, dogSpawn.position + offset, 2));
 
         dog.PutDown();
     }
@@ -133,14 +136,15 @@ public class UnitManager : MonoBehaviour
     {
         var lJack = Instantiate<LJack>(lJackPrefab);
         lJack.onSwing.AddListener(OnAxe);
+        var offset = Offset();
 
-        yield return StartCoroutine(lJack.Walk(lJackSpawn.position, cutSpot.position, 5));
+        yield return StartCoroutine(lJack.Walk(lJackSpawn.position + offset, cutSpot.position + offset, 5));
 
         _lJacks.Enqueue(lJack);
         // Pee until interrupted
-        yield return StartCoroutine(lJack.Spin(cutSpot.position));
+        yield return StartCoroutine(lJack.Spin(cutSpot.position + offset));
 
-        yield return StartCoroutine(lJack.Walk(cutSpot.position, lJackSpawn.position, 2));
+        yield return StartCoroutine(lJack.Walk(cutSpot.position + offset, lJackSpawn.position + offset, 2));
 
         lJack.PutDown();
     }
@@ -148,16 +152,17 @@ public class UnitManager : MonoBehaviour
     IEnumerator SendHippyCO(LJack lJack)
     {
         var hippy = Instantiate<Hippy>(hippyPrefab);
+        var offset = lJack.transform.position - cutSpot.position;
 
-        yield return StartCoroutine(hippy.Walk(hippySpawn.position, hugSpot.position, 2));
+        yield return StartCoroutine(hippy.Walk(hippySpawn.position + offset, hugSpot.position + offset, 2));
 
-        StartCoroutine(hippy.Hug(hugSpot.position));
+        StartCoroutine(hippy.Hug(hugSpot.position + offset));
 
         yield return new WaitForSeconds(2);
 
         lJack.Stop();
 
-        yield return StartCoroutine(hippy.Walk(hugSpot.position, hippySpawn.position, 6f));
+        yield return StartCoroutine(hippy.Walk(hugSpot.position + offset, hippySpawn.position + offset, 6f));
 
         hippy.PutDown();
     }
@@ -165,6 +170,13 @@ public class UnitManager : MonoBehaviour
     public int LJackCount()
     {
         return _lJacks.Count;
+    }
+
+    Vector3 Offset()
+    {
+        Vector3 offset = Random.insideUnitCircle * locationSpread;
+        offset.z = -offset.x * 0.1f + offset.y;
+        return offset;
     }
 
 }
