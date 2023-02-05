@@ -72,7 +72,7 @@ public class LJack : MonoBehaviour
         _soundSource.loop = true;
         _soundSource.Play();
 
-        float nextSwing = Time.time + swingInterval;
+        float nextSwing = Time.time + swingInterval / 2;
 
         while (true)
         {
