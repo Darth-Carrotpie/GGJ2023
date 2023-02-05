@@ -141,5 +141,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7bf4b0228f6389c4c863d487a1ad024f, type: 3}
   - {fileID: 8300000, guid: aca999a8bae526f4c916e2d01121a3b7, type: 3}
   upgradeClips:
-  - {fileID: 8300000, guid: 0862d535484fb7549aea95bcac3bc35d, type: 3}
-  - {fileID: 8300000, guid: 8e3788eacee29ba41b1f062bb7feabf8, type: 3}
+  - {fileID: 8300000, guid: a0134b118ff966b45bf8a51a7a5e0905, type: 3}
