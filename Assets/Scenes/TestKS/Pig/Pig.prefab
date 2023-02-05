@@ -5081,6 +5081,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dirtEmitter: {fileID: 328741506180834060}
   bodyTransform: {fileID: 8287216949052635316}
+  entryClip: {fileID: 8300000, guid: 60e6443b62508164aa56b5e4d8dbe7c8, type: 3}
+  damageClip: {fileID: 0}
 --- !u!95 &7321125442430224076
 Animator:
   serializedVersion: 5
